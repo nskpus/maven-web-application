@@ -29,7 +29,7 @@
 		<!--<sonar.login>nskp</sonar.login>
 		<sonar.password>nskp</sonar.password>
 		-->
-	      <sonar.login>8106d99b5c86ed5446d4e464b4c79bf4984a9177</sonar.login>
+	      <sonar.login>7816fecb2a02a516af1369e92cbbf6fc00adaa4e</sonar.login>
 		
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
