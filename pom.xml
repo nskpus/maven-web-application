@@ -123,13 +123,13 @@
 	      <id>nexus</id><!--this and maven home inside severs give the same              -->
 	      <name>nskptech Releases Nexus Repository</name>
 	      <!--<url>http://13.233.113.232:8081/repository/mt-releases/</url>-->
-		  <!--<url>http://13.232.19.214:2525/nskp/repository/First-Release/</url> -->
+	       <url>http://13.232.245.40:8081/repository/FirstDev-Release/</url> 
 	    </repository>
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
 	      <!--<url>http://13.233.113.232:8081/repository/mt-snapshots/</url>-->
-		  <!--<url>http://13.232.19.214:2525/nskp/repository/First-snapshot/</url> -->
+	      <url>http://13.232.245.40:8081/repository/FirstDev-snapshot/</url>
 	    </snapshotRepository>
 	</distributionManagement>
 	
