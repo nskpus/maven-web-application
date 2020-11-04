@@ -5,11 +5,12 @@
 	<groupId>com.mt</groupId>
 	<artifactId>maven-web-application</artifactId>
 	<packaging>war</packaging>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	
-	<name>maven-web-application</name>
-
-	<description>Maven Web Project for Java Project</description>
+	<name>Maven Web Application</name>
+	<url>http://mithuntechnologies.com</url>
+	
+	<description>Maven Web Project</description>
 
 	<organization>
 		<name>Mithun Technologies</name>
@@ -17,42 +18,53 @@
 	</organization>
 
 	<properties>
-		<jdk.version>1.8</jdk.version>
-		<spring.version>5.1.2.RELEASE</spring.version>
-		<junit.version>4.11</junit.version>
+		<!-- versions -->
+		
+		<spring.version>5.0.2.RELEASE</spring.version>
+		<junit.version>4.12</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http://15.206.91.121:9000/</sonar.host.url>
-		<!-- <sonar.login>8895add12020c76d780a602b1380f71930cac141</sonar.login> -->
-		<!--
-                <sonar.login>admin</sonar.login>
-		<sonar.password>admin</sonar.password> 
-                -->
+		<!--<sonar.host.url>http://13.233.128.215:9000/</sonar.host.url>-->
+		<!--<sonar.host.url>http://13.233.17.119:2524/</sonar.host.url>-->
+		
+		<!--<sonar.login>nskp</sonar.login>
+		<sonar.password>nskp</sonar.password>
+		-->
+	    <!--<sonar.login>8106d99b5c86ed5446d4e464b4c79bf4984a9177</sonar.login>-->
+		
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
 	</properties>
 
+	<!--<repositories>
+		<repository>
+		<id>nexus</id>
+		<url>http://15.207.117.217:2525/nskptech/repository/nexus-proxyrep/</url>
+		</repository>
+	</repositories>
+    -->
+
 	<dependencies>
-		
-		<dependency>
-			<groupId>org.json</groupId>
-			<artifactId>json</artifactId>
-			<version>20160212</version>
-		</dependency>
-		
+
 		<!-- test dependencies -->
+		
+		<!--<dependency>
+        <groupId>com.nskp</groupId>
+        <artifactId>mail</artifactId>
+        <version>1.0</version>
+       </dependency>
+  -->
+		
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
+			<version>${junit.version}</version>
 		</dependency>
 
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>3.1.0</version>
-			<scope>provided</scope>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>3.2.3.RELEASE</version>
+			<scope>test</scope>
 		</dependency>
 
 		<dependency>
@@ -70,10 +82,10 @@
 			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
-    		<groupId>org.springframework</groupId>
-    		<artifactId>spring-web</artifactId>
-    		<version>${spring.version}</version>
-  		</dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
@@ -84,7 +96,7 @@
 			<artifactId>spring-context</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		
+
 		<!-- provided dependencies -->
 
 		<dependency>
@@ -94,64 +106,39 @@
 			<scope>provided</scope>
 		</dependency>
 		
+		
 	</dependencies>
 	
 	<distributionManagement>
-	
 	    <repository>
-	      <id>nexus</id>
-	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <!--<url>http://13.233.101.94:9980/mithuntechnologies/repository/flipkart-release/</url> -->
+	      <id>nexus</id><!--this and maven home inside severs give the same              -->
+	      <name>nskptech Releases Nexus Repository</name>
+	      <!--<url>http://13.233.113.232:8081/repository/mt-releases/</url>-->
+		  <!--<url>http://13.232.19.214:2525/nskp/repository/First-Release/</url> -->
 	    </repository>
-	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <!--<url>http://13.233.101.94:9980/mithuntechnologies/repository/flipkart-snapshot/</url> -->
+	      <!--<url>http://13.233.113.232:8081/repository/mt-snapshots/</url>-->
+		  <!--<url>http://13.232.19.214:2525/nskp/repository/First-snapshot/</url> -->
 	    </snapshotRepository>
-	    
 	</distributionManagement>
 	
 	<build>
 		<finalName>maven-web-application</finalName>
-		
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.3</version>
+				<version>2.5.1</version>
+				<inherited>true</inherited>
 				<configuration>
-					<source>${jdk.version}</source>
-					<target>${jdk.version}</target>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
-
-			<plugin>
-				<groupId>org.eclipse.jetty</groupId>
-				<artifactId>jetty-maven-plugin</artifactId>
-				<version>9.2.11.v20150529</version>
-				<configuration>
-					<scanIntervalSeconds>10</scanIntervalSeconds>
-					<webApp>
-						<contextPath>/maven-web-application</contextPath>
-					</webApp>
-				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-eclipse-plugin</artifactId>
-				<version>2.9</version>
-				<configuration>
-					<downloadSources>true</downloadSources>
-					<downloadJavadocs>true</downloadJavadocs>
-					<wtpversion>2.0</wtpversion>
-					<wtpContextName>maven-web-application</wtpContextName>
-				</configuration>
-			</plugin>
-			
-</plugins>
+		</plugins>
 	</build>
-	
+
 	
 </project>
