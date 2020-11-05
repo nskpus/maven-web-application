@@ -129,7 +129,7 @@
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
 	      <!--<url>http://13.233.113.232:8081/repository/mt-snapshots/</url>-->
-	      <url>http:http://13.126.0.40:8081/repository/FirstDev-Snapshot/</url>
+	      <url>http://13.126.0.40:8081/repository/FirstDev-Snapshot/</url>
 	    </snapshotRepository>
 	</distributionManagement>
 	
