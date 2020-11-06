@@ -24,7 +24,7 @@
 		<junit.version>4.12</junit.version>
 		<log4j.version>1.2.17</log4j.version>
 		<!--<sonar.host.url>http://13.233.128.215:9000/</sonar.host.url>-->
-		<sonar.host.url>http://13.235.79.181:9000/</sonar.host.url>
+		<sonar.host.url>http://13.233.122.123:9000/</sonar.host.url>
 		
 		<!--<sonar.login>nskp</sonar.login>
 		<sonar.password>nskp</sonar.password>
