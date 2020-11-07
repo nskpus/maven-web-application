@@ -18,7 +18,7 @@
 	<span style="font-weight: bold;">
 		nskphnologies, 
 		<br>
-		<a href="mailto:devopstrainingblr@gmail.com">Mail to Mithun Technologies</a>
+		<a href="mailto:devopstrainingblr@gmail.com">Mail to saidulu naganaboina</a>
 	</span>
 </div>
 <hr>
